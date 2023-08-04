@@ -2,26 +2,23 @@
 
 from plone.app.contenttypes.interfaces import IDocument
 from plone.dexterity.interfaces import IDexterityContent
-from plone.indexer import indexer
+from plone.indexer.decorator import indexer
 from bs4 import BeautifulSoup
 
 
-@indexer(IDexterityContent)
-def dummy(obj):
-    """Dummy to prevent indexing other objects thru acquisition"""
-    raise AttributeError("This field should not indexed here!")
 
-
-@indexer(IDocument)  # ADJUST THIS!
+@indexer(IDexterityContent)  # ADJUST THIS!
 def tile_types(obj):
     """Calculate and return the value for the indexer"""
+
+    import pdb ; pdb.set_trace()
 
     # Check if the object has a getLayout method (supports tiles)
     if hasattr(obj, "getLayout"):
         # Get the tiles (collection of tiles)
         content_layout = obj.getLayout()
         if content_layout:
-            soup = BeautifulSoup(content_layout)
+            soup = BeautifulSoup(content_layout, features="lxml")
             divs = soup.find_all(attrs={"data-tile": True})
             mapping = {}
             for dt in [d["data-tile"] for d in divs]:

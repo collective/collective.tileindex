@@ -4,7 +4,8 @@
 
  <!-- -*- extra stuff goes here -*- -->
 
-  <include file="tile_types.zcml" />
 
+  <adapter factory=".tile_types.tile_types"
+    name="tile_types" />
 
 </configure>
