@@ -19,13 +19,15 @@ class CollectiveTileindexLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.tileindex)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.tileindex:default')
+        applyProfile(portal, "collective.tileindex:default")
 
 
 COLLECTIVE_TILEINDEX_FIXTURE = CollectiveTileindexLayer()
@@ -33,13 +35,13 @@ COLLECTIVE_TILEINDEX_FIXTURE = CollectiveTileindexLayer()
 
 COLLECTIVE_TILEINDEX_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_TILEINDEX_FIXTURE,),
-    name='CollectiveTileindexLayer:IntegrationTesting',
+    name="CollectiveTileindexLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_TILEINDEX_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_TILEINDEX_FIXTURE,),
-    name='CollectiveTileindexLayer:FunctionalTesting',
+    name="CollectiveTileindexLayer:FunctionalTesting",
 )
 
 
@@ -49,5 +51,5 @@ COLLECTIVE_TILEINDEX_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectiveTileindexLayer:AcceptanceTesting',
+    name="CollectiveTileindexLayer:AcceptanceTesting",
 )

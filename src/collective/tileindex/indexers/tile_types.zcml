@@ -1,0 +1,9 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter factory=".tile_types.dummy"
+    name="tile_types" />
+
+  <adapter factory=".tile_types.tile_types"
+    name="tile_types" />
+
+</configure>

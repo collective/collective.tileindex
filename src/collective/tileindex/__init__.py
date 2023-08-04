@@ -3,4 +3,4 @@
 from zope.i18nmessageid import MessageFactory
 
 
-_ = MessageFactory('collective.tileindex')
+_ = MessageFactory("collective.tileindex")
