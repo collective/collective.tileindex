@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
 from plone import api
-import logging
 from Products.CMFCore.utils import getToolByName
+
+import logging
 
 
 logger = logging.getLogger(__name__)
 
 
 def add_indexes(context):
-    """Add indexes.
-    """
-    catalog = getToolByName(context, 'portal_catalog')
+    """Add indexes."""
+    catalog = getToolByName(context, "portal_catalog")
     indexes = catalog.indexes()
 
     wanted_indexes = [
-        ('tile_types', 'KeywordIndex'),
-
+        ("tile_types", "KeywordIndex"),
     ]
 
     indexables = []
@@ -23,9 +22,9 @@ def add_indexes(context):
         if index_name not in indexes:
             catalog.addIndex(index_name, index_type)
             indexables.append(index_name)
-            logger.info('Added %s for %s.' % (index_type, index_name))
+            logger.info("Added %s for %s." % (index_type, index_name))
     if len(indexables) > 0:
-        logger.info("Indexing new indexes %s.", ', '.join(indexables))
+        logger.info("Indexing new indexes %s.", ", ".join(indexables))
         # I was pretty sure this also updated the catalog brains, but
         # it does not...
         catalog.manage_reindexIndex(ids=indexables)

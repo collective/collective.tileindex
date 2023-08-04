@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.tileindex">
+
+ <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+    name="tile-types"
+    for="*"
+    class=".tile_types_test_view.TileTypesTestView"
+    template="tile_types_test_view.pt"
+    permission="zope2.View"
+    layer="collective.tileindex.interfaces.ICollectiveTileindexLayer"
+    />
+
+</configure>
