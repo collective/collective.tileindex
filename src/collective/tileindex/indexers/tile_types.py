@@ -10,6 +10,7 @@ from plone.indexer.decorator import indexer
 def tile_types(obj):
     """Calculate and return the value for the indexer"""
 
+    return []
     import pdb
 
     pdb.set_trace()
