@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 from .upgrades import add_indexes
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
 
 @implementer(INonInstallable)
-class HiddenProfiles(object):
+class HiddenProfiles:
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [

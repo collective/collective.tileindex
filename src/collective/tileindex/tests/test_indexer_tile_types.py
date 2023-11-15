@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.tileindex.testing import COLLECTIVE_TILEINDEX_FUNCTIONAL_TESTING
 from collective.tileindex.testing import COLLECTIVE_TILEINDEX_INTEGRATION_TESTING
 from plone.app.testing import setRoles

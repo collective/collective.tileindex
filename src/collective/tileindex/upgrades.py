@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 
 import logging
@@ -21,7 +20,7 @@ def add_indexes(context):
         if index_name not in indexes:
             catalog.addIndex(index_name, index_type)
             indexables.append(index_name)
-            logger.info("Added %s for %s." % (index_type, index_name))
+            logger.info("Added {} for {}.".format(index_type, index_name))
     if len(indexables) > 0:
         logger.info("Indexing new indexes %s.", ", ".join(indexables))
         # I was pretty sure this also updated the catalog brains, but

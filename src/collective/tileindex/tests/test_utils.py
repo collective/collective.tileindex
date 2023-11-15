@@ -65,11 +65,11 @@ class TestUtils(unittest.TestCase):
             </div>"""
         self.assertEqual(
             get_tile_types_from_text(persistent_tile),
-            set(["plone.app.standardtiles.html"]),
+            {"plone.app.standardtiles.html"},
         )
         self.assertEqual(
             get_tile_types_from_text(transient_tile),
-            set(["plone.app.standardtiles.field"]),
+            {"plone.app.standardtiles.field"},
         )
 
         # get_tile_types_from_text returns a set.  Let's sort this to make it easier to compare.

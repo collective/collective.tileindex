@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Setup tests for this package."""
 from collective.tileindex.testing import (  # noqa: E501
     COLLECTIVE_TILEINDEX_INTEGRATION_TESTING,
