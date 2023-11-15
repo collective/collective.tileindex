@@ -13,8 +13,8 @@ class HiddenProfiles(object):
         ]
 
     def getNonInstallableProducts(self):
-        """Hide the upgrades package from site-creation and quickinstaller."""
-        return ["collective.tileindex.upgrades"]
+        """Hide package from site-creation and quickinstaller."""
+        return []
 
 
 def post_install(context):

@@ -27,9 +27,10 @@ setup(
         "Framework :: Plone :: 5.2",
         "Framework :: Plone :: 6.0",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -52,26 +53,16 @@ setup(
     python_requires=">=3.7",
     install_requires=[
         "setuptools",
-        # -*- Extra requirements: -*-
-        "z3c.jbot",
         "plone.api>=1.8.4",
-        "plone.app.dexterity",
     ],
     extras_require={
         "test": [
             "plone.app.testing",
-            # Plone KGS does not use this version, because it would break
-            # Remove if your package shall be part of coredev.
-            # plone_coredev tests as of 2016-04-01.
             "plone.testing>=5.0.0",
-            "plone.app.contenttypes",
-            "plone.app.robotframework[debug]",
         ],
     },
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
-    [console_scripts]
-    update_locale = collective.tileindex.locales.update:update_locale
     """,
 )

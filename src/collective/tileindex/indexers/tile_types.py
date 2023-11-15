@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
-from plone.app.contenttypes.interfaces import IDocument
+
+# from plone.app.contenttypes.interfaces import IDocument
 from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer.decorator import indexer
 
