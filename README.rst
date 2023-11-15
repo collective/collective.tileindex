@@ -29,14 +29,10 @@ An add-on for Plone
 Features
 --------
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- Catalog index that tells you which tiles are in use.
+  Think of Mosaic or collective.cover, or any package that builds on ``plone.app.blocks``.
+- ``tile-types-view`` for a page, showing which tiles this page uses.
+- ``tile-types-overview`` for the Plone site root, with a total for the whole site, including search results for individual tiles.
 
 
 Documentation
@@ -50,7 +46,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- Dutch
 
 
 Installation
@@ -66,21 +62,16 @@ Install collective.tileindex by adding it to your buildout::
         collective.tileindex
 
 
-and then running ``bin/buildout``
+and then running ``bin/buildout``.
+Go to the Add-ons control panel to activate it.
+This goes through the whole Plone Site and updates the index for items with the ``plone.layoutaware`` behavior.
 
 
 Authors
 -------
 
-Provided by awesome people ;)
-
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
+- Fred van Dijk (Zest Software)
+- Maurits van Rees (Zest Software)
 
 
 Contribute
