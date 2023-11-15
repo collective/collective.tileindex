@@ -15,4 +15,13 @@
     layer="collective.tileindex.interfaces.ICollectiveTileindexLayer"
     />
 
+  <browser:page
+    name="tile-types-overview"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".tile_types_overview.TileTypesOverview"
+    template="tile_types_overview.pt"
+    permission="cmf.ManagePortal"
+    layer="collective.tileindex.interfaces.ICollectiveTileindexLayer"
+    />
+
 </configure>
