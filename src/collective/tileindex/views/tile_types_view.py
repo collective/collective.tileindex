@@ -3,7 +3,7 @@ from functools import cached_property
 from Products.Five.browser import BrowserView
 
 
-class TileTypesTestView(BrowserView):
+class TileTypesView(BrowserView):
     @cached_property
     def tile_types(self):
         tiles = get_tile_types_from_obj(self.context)

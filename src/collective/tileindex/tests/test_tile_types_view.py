@@ -17,13 +17,13 @@ class ViewsIntegrationTest(unittest.TestCase):
     def test_tile_types_is_registered_document(self):
         api.content.create(self.portal, "Document", "front-page")
         view = getMultiAdapter(
-            (self.portal["front-page"], self.portal.REQUEST), name="tile-types"
+            (self.portal["front-page"], self.portal.REQUEST), name="tile-types-view"
         )
         self.assertIsNone(view.tile_types)
 
     def test_tile_types_is_registered_folder(self):
         api.content.create(self.portal, "Folder", "other-folder")
         view = getMultiAdapter(
-            (self.portal["other-folder"], self.portal.REQUEST), name="tile-types"
+            (self.portal["other-folder"], self.portal.REQUEST), name="tile-types-view"
         )
         self.assertIsNone(view.tile_types)
