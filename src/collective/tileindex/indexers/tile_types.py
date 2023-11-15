@@ -1,35 +1,48 @@
 # -*- coding: utf-8 -*-
-
 from bs4 import BeautifulSoup
-
-# from plone.app.contenttypes.interfaces import IDocument
-from plone.dexterity.interfaces import IDexterityContent
+from plone.app.blocks.layoutbehavior import ILayoutBehaviorAdaptable
+from plone.app.blocks.layoutbehavior import ILayoutAware
 from plone.indexer.decorator import indexer
 
+try:
+    from plone.base.utils import base_hasattr
+except ImportError:
+    # BBB Plone 5.2
+    from Products.CMFPlone.utils import base_hasattr
 
-@indexer(IDexterityContent)  # ADJUST THIS!
+
+@indexer(ILayoutBehaviorAdaptable)
 def tile_types(obj):
     """Calculate and return the value for the indexer"""
+    if not base_hasattr(obj, "__annotations__"):
+        return
+    if obj.getProperty("layout", "") != "layout_view":
+        return
 
-    return []
-    import pdb
+    # Get the tiles from the content layout.
+    layout = ILayoutAware(obj)
+    content_layout = layout.content_layout()
+    if not content_layout:
+        return
+    soup = BeautifulSoup(content_layout, features="lxml")
+    # We search for content like this.
+    # Persistent tile:
+    # <div data-tile="./@@plone.app.standardtiles.html/some-tile-uid"></div>
+    # Transient tile:
+    # <div data-tile="./@@plone.app.standardtiles.field?field=IDublinCore-title"></div>
+    divs = soup.find_all(attrs={"data-tile": True})
+    tile_types = set()
+    for dt in [d["data-tile"] for d in divs]:
+        items = dt.split("/")
+        if len(items) == 3:
+            tile = items[1]
+        elif len(items) == 2:
+            tile = items[1].split("?")[0]
+        else:
+            continue
+        tile = tile.strip("@")
+        if not tile:
+            continue
+        tile_types.add(tile)
 
-    pdb.set_trace()
-    # Check if the object has a getLayout method (supports tiles)
-    if hasattr(obj, "getLayout"):
-        # Get the tiles (collection of tiles)
-        content_layout = obj.getLayout()
-        if content_layout:
-            soup = BeautifulSoup(content_layout, features="lxml")
-            divs = soup.find_all(attrs={"data-tile": True})
-            mapping = {}
-            for dt in [d["data-tile"] for d in divs]:
-                items = dt.split("/")
-                if len(items) == 3:
-                    mapping[items[2]] = items[1]
-                else:
-                    # This tile has no annotation, so it might be a richtext tile showing the text field
-                    continue
-            return set(mapping.keys())
-
-    return []
+    return tile_types

@@ -54,6 +54,7 @@ setup(
     install_requires=[
         "setuptools",
         "plone.api>=1.8.4",
+        "plone.app.blocks",
     ],
     extras_require={
         "test": [
