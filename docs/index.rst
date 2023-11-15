@@ -1,5 +1,0 @@
-====================
-collective.tileindex
-====================
-
-User documentation

@@ -49,7 +49,7 @@ This add-on can be seen in action at the following sites:
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+The documentation is this README file.
 
 
 Translations
@@ -95,7 +95,6 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.tileindex/issues
 - Source Code: https://github.com/collective/collective.tileindex
-- Documentation: https://docs.plone.org/foo/bar
 
 
 Support
