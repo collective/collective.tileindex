@@ -12,7 +12,6 @@ import unittest
 
 
 class ViewsIntegrationTest(unittest.TestCase):
-
     layer = COLLECTIVE_TILEINDEX_INTEGRATION_TESTING
 
     def setUp(self):
@@ -41,7 +40,6 @@ class ViewsIntegrationTest(unittest.TestCase):
 
 
 class ViewsFunctionalTest(unittest.TestCase):
-
     layer = COLLECTIVE_TILEINDEX_FUNCTIONAL_TESTING
 
     def setUp(self):

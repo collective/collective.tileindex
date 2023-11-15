@@ -9,7 +9,6 @@ import collective.tileindex
 
 
 class CollectiveTileindexLayer(PloneSandboxLayer):
-
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):

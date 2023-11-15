@@ -42,7 +42,6 @@ class TestSetup(unittest.TestCase):
 
 
 class TestUninstall(unittest.TestCase):
-
     layer = COLLECTIVE_TILEINDEX_INTEGRATION_TESTING
 
     def setUp(self):

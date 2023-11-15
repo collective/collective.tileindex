@@ -8,7 +8,6 @@ import unittest
 
 
 class IndexerIntegrationTest(unittest.TestCase):
-
     layer = COLLECTIVE_TILEINDEX_INTEGRATION_TESTING
 
     def setUp(self):
@@ -20,7 +19,6 @@ class IndexerIntegrationTest(unittest.TestCase):
 
 
 class IndexerFunctionalTest(unittest.TestCase):
-
     layer = COLLECTIVE_TILEINDEX_FUNCTIONAL_TESTING
 
     def setUp(self):
