@@ -5,13 +5,6 @@
 .. image:: https://github.com/collective/collective.tileindex/actions/workflows/plone-package.yml/badge.svg
     :target: https://github.com/collective/collective.tileindex/actions/workflows/plone-package.yml
 
-.. image:: https://coveralls.io/repos/github/collective/collective.tileindex/badge.svg?branch=main
-    :target: https://coveralls.io/github/collective/collective.tileindex?branch=main
-    :alt: Coveralls
-
-.. image:: https://codecov.io/gh/collective/collective.tileindex/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/collective/collective.tileindex
-
 .. image:: https://img.shields.io/pypi/v/collective.tileindex.svg
     :target: https://pypi.python.org/pypi/collective.tileindex/
     :alt: Latest Version
