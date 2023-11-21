@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0a2 (unreleased)
+1.0.0a2 (2023-11-21)
 --------------------
 
 - Add controlpanel link to the tile types overview. [fredvd]
