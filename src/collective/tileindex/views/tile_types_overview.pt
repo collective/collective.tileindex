@@ -31,11 +31,19 @@
     <p i18n:translate="msg_note_same_type_counted_once">
       Note that a page that has 100 tiles of the same type, is only counted once.
     </p>
-    <tal:search_results condition="request/tile|nothing">
-      <h3 i18n:translate="">Search results for tile <span i18n:name="tile" tal:replace="request/tile" /></h3>
+    <tal:search_results condition="request/tile|nothing" define="(published,unpublished) view/search_results">
+      <h3 i18n:translate="">Search results for tile <span i18n:name="tile" tal:replace="request/tile" /> <span i18n:name="published" tal:replace="python:len(published)"/>/<span i18n:name="unpublished" tal:replace="python:len(unpublished)"/> (published/unpublished)</h3>
+      <h4 i18n:translate="">Published <span i18n:name="published" tal:replace="python:len(published)"/></h4>
       <ol>
-        <li tal:repeat="item view/search_results">
-          <a href="${item/getURL}">${item/Title}</a><br>(${item/getPath})
+        <li tal:repeat="item published">
+          <a href="${item/getURL}">${item/Title}</a><br/>(${item/getPath})
+        </li>
+      </ol>
+
+      <h4 i18n:translate="">Private/Other <span i18n:name="unpublished" tal:replace="python:len(unpublished)"/></h4>
+      <ol>
+        <li tal:repeat="item unpublished">
+          <a href="${item/getURL}">${item/Title}</a><br/>(${item/getPath})
         </li>
       </ol>
     </tal:search_results>

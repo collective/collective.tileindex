@@ -32,5 +32,12 @@ class TileTypesOverview(BrowserView):
     def search_results(self):
         tile = self.request.get("tile")
         if not tile:
-            return
-        return api.content.find(tile_types=tile)
+            return (None, None)
+        unpublished = []
+        published = []
+        for item in api.content.find(tile_types=tile, sort_on='path', sort_order='ascending'):
+            if item['review_state'] == 'published':
+                published.append(item)
+            else:
+                unpublished.append(item)
+        return (published, unpublished)

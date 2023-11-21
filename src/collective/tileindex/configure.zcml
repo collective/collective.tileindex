@@ -11,23 +11,7 @@
 
   <include file="permissions.zcml" />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="collective.tileindex"
-      directory="profiles/default"
-      description="Installs the collective.tileindex add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="collective.tileindex (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the collective.tileindex add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
+  <include file="profiles.zcml" />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"

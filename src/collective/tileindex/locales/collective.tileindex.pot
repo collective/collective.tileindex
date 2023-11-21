@@ -1,10 +1,10 @@
-#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-#SOME DESCRIPTIVE TITLE.
-#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-11-15 16:56+0000\n"
+"POT-Creation-Date: 2023-11-21 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,8 +25,16 @@ msgstr ""
 msgid "Installs the collective.tileindex add-on."
 msgstr ""
 
+#: ../views/tile_types_overview.pt:43
+msgid "Private/Other ${unpublished}"
+msgstr ""
+
+#: ../views/tile_types_overview.pt:36
+msgid "Published ${published}"
+msgstr ""
+
 #: ../views/tile_types_overview.pt:35
-msgid "Search results for tile ${tile}"
+msgid "Search results for tile ${tile} ${published}/${unpublished} (published/unpublished)"
 msgstr ""
 
 #: ../views/tile_types_overview.pt:19

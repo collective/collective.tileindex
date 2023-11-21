@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.tileindex 1.0\n"
-"POT-Creation-Date: 2023-11-15 16:56+0000\n"
+"POT-Creation-Date: 2023-11-21 15:08+0000\n"
 "PO-Revision-Date: 2023-11-15 16:56+0000\n"
 "Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
 "Language-Team: Zest Software <info@@zestsoftware.nl>\n"
@@ -9,11 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language: nl\n"
 "Language-Code: nl\n"
 "Language-Name: Nederlands\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.tileindex\n"
+"Language: nl\n"
 
 #: ../views/tile_types_overview.pt:12
 msgid "ERROR: tile_types index is missing!"
@@ -23,9 +23,17 @@ msgstr "FOUT: tile_types index niet gevonden!"
 msgid "Installs the collective.tileindex add-on."
 msgstr "Installeert collective.tileindex"
 
+#: ../views/tile_types_overview.pt:43
+msgid "Private/Other ${unpublished}"
+msgstr "Privé/anders"
+
+#: ../views/tile_types_overview.pt:36
+msgid "Published ${published}"
+msgstr "Gepubliceerd"
+
 #: ../views/tile_types_overview.pt:35
-msgid "Search results for tile ${tile}"
-msgstr "Zoekresultaten voor tegel ${tile}"
+msgid "Search results for tile ${tile} ${published}/${unpublished} (published/unpublished)"
+msgstr "Zoekresultaten voor tegel ${tile} - ${published}/${unpublished} (gepubliceerd/privé)"
 
 #: ../views/tile_types_overview.pt:19
 msgid "Tile names sorted alphabetically"
