@@ -20,7 +20,7 @@ class TileTypesOverview(BrowserView):
             return "tile"
         elif not self.tile_index and self.block_index:
             return "block"
-        return None
+        return
 
     @cached_property
     def indexname(self):
@@ -32,18 +32,18 @@ class TileTypesOverview(BrowserView):
 
     @cached_property
     def numObjects(self):
-        return getattr(self, self.indexmethod, None).numObjects()
+        return getattr(self, self.indexmethod).numObjects()
 
     @cached_property
     def alphabetical(self):
-        return sorted(getattr(self, self.indexmethod, None).uniqueValues())
+        return sorted(getattr(self, self.indexmethod).uniqueValues())
 
     @cached_property
     def numerical(self):
         items = sorted(
             [
                 (len(value), key)
-                for (key, value) in getattr(self, self.indexmethod, None).items()
+                for (key, value) in getattr(self, self.indexmethod).items()
             ],
             reverse=True,
         )
