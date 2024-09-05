@@ -5,7 +5,10 @@ Changelog
 1.0.0a4 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Make ``plone.app.blocks`` dependency optional.
+  If you don't have it yet, you have no tiles, so we do not create our ``tile_types`` catalog index.
+  The control panel can then be used for search Volto blocks.
+  [maurits]
 
 
 1.0.0a3 (2024-09-05)

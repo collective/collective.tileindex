@@ -8,6 +8,16 @@ logger = logging.getLogger(__name__)
 
 def add_indexes(context):
     """Add indexes."""
+    try:
+        import plone.app.blocks  # noqa
+    except ImportError:
+        logger.info(
+            "plone.app.blocks package not found. This means you have no tiles "
+            "and do not need the tile_types index. You may have Volto blocks "
+            "and can use our control panel to search the block_types index."
+        )
+        return
+
     catalog = getToolByName(context, "portal_catalog")
     indexes = catalog.indexes()
 
