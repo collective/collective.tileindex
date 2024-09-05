@@ -24,17 +24,20 @@
 collective.tileindex
 ====================
 
-An add-on for Plone
+An add-on for Plone to list and search tiles or blocks.
 
 Features
 --------
 
 - Catalog index that tells you which tiles are in use.
   Think of Mosaic or collective.cover, or any package that builds on ``plone.app.blocks``.
+  If that basic package is not available, the index is not needed, so we do not add it.
 - ``tile-types-view`` for a page, showing which tiles this page uses.
-- ``tile-types-overview`` for the Plone site root, with a total for the whole site, including search results for individual tiles.
-- This has also been made to work with Volto blocks.
+  This only works with tiles, not Volto blocks.
+- ``tile-types-overview`` control panel for the Plone site root, with a total for the whole site, including search results for individual tiles or blocks.
+- Originally this package was only meant for tiles, but since 1.0.0a3 it also works with Volto blocks.
   The control panel either shows tiles or blocks, not both.
+  If you use both, you have a strange setup.
 
 
 Documentation
@@ -66,8 +69,7 @@ Install collective.tileindex by adding it to your buildout::
 
 and then running ``bin/buildout``.
 Go to the Add-ons control panel to activate it.
-This goes through the whole Plone Site and updates the index for items with the ``plone.layoutaware`` behavior.
-
+When you have the basic tiles package, this adds a ``tile_types`` index and goes through the whole Plone Site and updates the index for items with the ``plone.layoutaware`` behavior.
 Now as Manager you can go to Site Setup, tab Content, then Tile Types Overview to get your overview of tiles or blocks.
 
 

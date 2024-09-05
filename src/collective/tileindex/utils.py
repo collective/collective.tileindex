@@ -1,6 +1,14 @@
 from bs4 import BeautifulSoup
-from plone.app.blocks.layoutbehavior import ILayoutAware
 
+
+try:
+    from plone.app.blocks.layoutbehavior import ILayoutAware
+except ImportError:
+    # plone.app.blocks is a conditional dependency and is only needed it you
+    # want to search for tiles.  If you use collective.tileindex for its
+    # Volto blocks support, you do not need this part.
+    # Note that Volto blocks and plone.app.blocks are totally unrelated.
+    ILayoutAware = None
 
 try:
     from plone.base.utils import base_hasattr
@@ -51,6 +59,8 @@ def get_tile_types_from_text(text):
 
 
 def get_tile_types_from_obj(obj):
+    if ILayoutAware is None:
+        return
     if not base_hasattr(obj, "__annotations__"):
         return
     if obj.getProperty("layout", "") != "layout_view":
