@@ -10,17 +10,41 @@ class TileTypesOverview(BrowserView):
         return catalog.Indexes.get("tile_types")
 
     @cached_property
+    def block_index(self):
+        catalog = api.portal.get_tool(name="portal_catalog")
+        return catalog.Indexes.get("block_types")
+
+    @cached_property
+    def tileorblock(self):
+        if self.tile_index and not self.block_index:
+            return "tile"
+        elif not self.tile_index and self.block_index:
+            return "block"
+        return
+
+    @cached_property
+    def indexname(self):
+        return f"{self.tileorblock}_types"
+
+    @cached_property
+    def indexmethod(self):
+        return f"{self.tileorblock}_index"
+
+    @cached_property
     def numObjects(self):
-        return self.tile_index.numObjects()
+        return getattr(self, self.indexmethod).numObjects()
 
     @cached_property
     def alphabetical(self):
-        return sorted(self.tile_index.uniqueValues())
+        return sorted(getattr(self, self.indexmethod).uniqueValues())
 
     @cached_property
     def numerical(self):
         items = sorted(
-            [(len(value), key) for (key, value) in self.tile_index.items()],
+            [
+                (len(value), key)
+                for (key, value) in getattr(self, self.indexmethod).items()
+            ],
             reverse=True,
         )
         result = []
@@ -35,9 +59,9 @@ class TileTypesOverview(BrowserView):
             return (None, None)
         unpublished = []
         published = []
-        for item in api.content.find(
-            tile_types=tile, sort_on="path", sort_order="ascending"
-        ):
+        query = {"sort_on": "path", "sort_order": "ascending"}
+        query[self.indexname] = tile
+        for item in api.content.find(**query):
             if item["review_state"] == "published":
                 published.append(item)
             else:

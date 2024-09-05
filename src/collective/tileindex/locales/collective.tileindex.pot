@@ -1,10 +1,10 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+#SOME DESCRIPTIVE TITLE.
+#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-11-21 15:08+0000\n"
+"POT-Creation-Date: 2024-09-05 10:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,39 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.tileindex\n"
 
-#: ../views/tile_types_overview.pt:12
-msgid "ERROR: tile_types index is missing!"
+#: ../views/tile_types_overview.pt:27
+msgid "${tileorblock} names sorted alphabetically"
 msgstr ""
 
-#: ../configure.zcml:21
-msgid "Installs the collective.tileindex add-on."
+#: ../views/tile_types_overview.pt:33
+msgid "${tileorblock} names sorted by number of items that use it"
 msgstr ""
 
-#: ../views/tile_types_overview.pt:43
-msgid "Private/Other ${unpublished}"
-msgstr ""
-
-#: ../views/tile_types_overview.pt:36
-msgid "Published ${published}"
-msgstr ""
-
-#: ../views/tile_types_overview.pt:35
-msgid "Search results for tile ${tile} ${published}/${unpublished} (published/unpublished)"
+#: ../views/tile_types_overview.pt:18
+msgid "Block types overview"
 msgstr ""
 
 #: ../views/tile_types_overview.pt:19
-msgid "Tile names sorted alphabetically"
+msgid "ERROR: block_types index is missing!"
 msgstr ""
 
-#: ../views/tile_types_overview.pt:25
-msgid "Tile names sorted by number of items that use it"
+#: ../views/tile_types_overview.pt:13
+msgid "ERROR: tile_types index is missing!"
 msgstr ""
 
-#: ../views/tile_types_overview.pt:11
+#: ../views/tile_types_overview.pt:51
+msgid "Private/Other ${unpublished}"
+msgstr ""
+
+#: ../views/tile_types_overview.pt:44
+msgid "Published ${published}"
+msgstr ""
+
+#: ../views/tile_types_overview.pt:43
+msgid "Search results for ${tileorblock} ${tile} ${published}/${unpublished} (published/unpublished)"
+msgstr ""
+
+#: ../views/tile_types_overview.pt:12
 msgid "Tile types overview"
 msgstr ""
 
@@ -53,24 +57,12 @@ msgstr ""
 msgid "Tile types used on this page"
 msgstr ""
 
-#: ../configure.zcml:30
-msgid "Uninstalls the collective.tileindex add-on."
-msgstr ""
-
-#: ../configure.zcml:21
-msgid "collective.tileindex"
-msgstr ""
-
-#: ../configure.zcml:30
-msgid "collective.tileindex (uninstall)"
-msgstr ""
-
-#. Default: "Note that a page that has 100 tiles of the same type, is only counted once."
-#: ../views/tile_types_overview.pt:31
+#. Default: "Note that a page that has more than one ${tileorblock} of the same type, is only counted once."
+#: ../views/tile_types_overview.pt:40
 msgid "msg_note_same_type_counted_once"
 msgstr ""
 
-#. Default: "There are ${numObjects} items with tiles in the index."
-#: ../views/tile_types_overview.pt:17
+#. Default: "There are ${numObjects} items with at least one ${tileorblock} in the index."
+#: ../views/tile_types_overview.pt:25
 msgid "msg_num_objects"
 msgstr ""
