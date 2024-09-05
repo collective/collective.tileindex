@@ -35,8 +35,10 @@ class TileTypesOverview(BrowserView):
             return (None, None)
         unpublished = []
         published = []
-        for item in api.content.find(tile_types=tile, sort_on='path', sort_order='ascending'):
-            if item['review_state'] == 'published':
+        for item in api.content.find(
+            tile_types=tile, sort_on="path", sort_order="ascending"
+        ):
+            if item["review_state"] == "published":
                 published.append(item)
             else:
                 unpublished.append(item)
