@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.tileindex 1.0\n"
-"POT-Creation-Date: 2024-09-04 21:27+0000\n"
+"POT-Creation-Date: 2024-09-05 10:14+0000\n"
 "PO-Revision-Date: 2023-11-15 16:56+0000\n"
 "Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
 "Language-Team: Zest Software <info@@zestsoftware.nl>\n"
@@ -55,12 +55,12 @@ msgstr "Tegeltypes overzicht"
 msgid "Tile types used on this page"
 msgstr "Tegeltypes gebruikt op deze pagina"
 
-#. Default: "Note that a page that has 100 ${tileorblock}s of the same type, is only counted once."
+#. Default: "Note that a page that has more than one ${tileorblock} of the same type, is only counted once."
 #: ../views/tile_types_overview.pt:40
 msgid "msg_note_same_type_counted_once"
-msgstr "N.B. Een pagina met 100 ${tileorblock}s van hezelfde type, wordt slechs één keer meegeteld."
+msgstr "N.B. Een pagina met meer dan één ${tileorblock} van hezelfde type, wordt slechs één keer meegeteld."
 
-#. Default: "There are ${numObjects} items with ${tileorblock} in the index."
+#. Default: "There are ${numObjects} items with at least one ${tileorblock} in the index."
 #: ../views/tile_types_overview.pt:25
 msgid "msg_num_objects"
-msgstr "Er zijn ${numObjects} items met ${tileorblock}s in de index."
+msgstr "Er zijn ${numObjects} items met minstens één ${tileorblock} in de index."

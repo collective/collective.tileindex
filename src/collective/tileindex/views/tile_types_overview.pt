@@ -22,7 +22,7 @@
   </tal:block>
     <tal:available condition="view/indexname">
     <p i18n:translate="msg_num_objects">
-      There are <span i18n:name="numObjects" tal:replace="view/numObjects" /> items with <span i18n:name="tileorblock" tal:replace="view/tileorblock" /> in the index.
+      There are <span i18n:name="numObjects" tal:replace="view/numObjects" /> items with at least one <span i18n:name="tileorblock" tal:replace="view/tileorblock" /> in the index.
     </p>
     <h3 i18n:translate=""><span i18n:name="tileorblock" tal:replace="view/tileorblock" /> names sorted alphabetically</h3>
     <ol tal:condition="view/alphabetical">
@@ -37,7 +37,7 @@
       </li>
     </ul>
     <p i18n:translate="msg_note_same_type_counted_once">
-      Note that a page that has 100 <span i18n:name="tileorblock" tal:replace="view/tileorblock" />s of the same type, is only counted once.
+      Note that a page that has more than one <span i18n:name="tileorblock" tal:replace="view/tileorblock" /> of the same type, is only counted once.
     </p>
     <tal:search_results condition="request/tile|nothing" define="(published,unpublished) view/search_results">
       <h3 i18n:translate="">Search results for <span i18n:name="tileorblock" tal:replace="view/tileorblock" /> <span i18n:name="tile" tal:replace="request/tile" /> <span i18n:name="published" tal:replace="python:len(published)"/>/<span i18n:name="unpublished" tal:replace="python:len(unpublished)"/> (published/unpublished)</h3>

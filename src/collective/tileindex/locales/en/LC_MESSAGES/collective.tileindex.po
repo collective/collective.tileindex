@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-04 21:27+0000\n"
+"POT-Creation-Date: 2024-09-05 10:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,12 +54,12 @@ msgstr ""
 msgid "Tile types used on this page"
 msgstr ""
 
-#. Default: "Note that a page that has 100 ${tileorblock}s of the same type, is only counted once."
+#. Default: "Note that a page that has more than one ${tileorblock} of the same type, is only counted once."
 #: ../views/tile_types_overview.pt:40
 msgid "msg_note_same_type_counted_once"
 msgstr ""
 
-#. Default: "There are ${numObjects} items with ${tileorblock} in the index."
+#. Default: "There are ${numObjects} items with at least one ${tileorblock} in the index."
 #: ../views/tile_types_overview.pt:25
 msgid "msg_num_objects"
 msgstr ""
