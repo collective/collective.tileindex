@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0a4 (unreleased)
+1.0.0a4 (2024-09-05)
 --------------------
 
 - Make ``plone.app.blocks`` dependency optional.
